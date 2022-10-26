@@ -1,5 +1,6 @@
 module AlgebraicInterfaces
 
-greet() = print("Hello World!")
+include("Categories.jl")
+include("CategoryInstances.jl")
 
 end # module AlgebraicInterfaces
