@@ -1,20 +1,22 @@
 module Categories
 
+import ..InterfaceCore: default
+
 export Category, dom, codom, compose, id
 
 abstract type Category{Ob, Hom} end
 
-function objectType(C::Category{Ob, Hom}) Ob end 
-function morphType(C::Category{Ob, Hom}) Hom end 
+function objectType(C::Category{Ob, Hom}) where {Ob, Hom} Ob end 
+function homType(C::Category{Ob, Hom}) where {Ob, Hom} Hom end 
 
-function dom end # Hom -> Ob 
-function codom end # Hom -> Ob 
+dom(f) = dom(default(f), f)
+codom(f) = codom(default(f), f)
 
-function compose end # Hom -> Hom -> Hom OR [Hom] -> Hom
-function id end # Ob -> Hom
+compose(f::Hom,g::Hom) where {Hom} = compose(default(f), f, g)
+id(f) = compose(default(f), f) # Ob -> Hom
 
-function compose(C::Category{Ob, Hom}, homs::Vector{Hom}) where {Ob, Hom}
-    foldl((f,g) -> compose(C, f, g), homs)
+function compose(C::Category{Ob, Hom}, homs...) where {Ob, Hom}
+  foldl((f,g) -> compose(C, f, g), [homs...])
 end
 
 end

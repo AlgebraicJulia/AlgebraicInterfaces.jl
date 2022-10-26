@@ -1,5 +1,6 @@
 module ArrowCat
 using ..Categories
+import ..Categories: dom, codom, compose, id
 
 struct Square{Hom}
   top::Hom
@@ -11,16 +12,19 @@ end
 struct ArrowCat{Ob, Hom, C <: Category{Ob, Hom}} <: Category{Hom, Square{Hom}} end
 
 function dom(::ArrowCat, s::Square)
-    s.top #maybe more natural to make this left? 
+  s.top
 end 
 
-function codom 
+function codom(::ArrowCat, s::Square)
+  s.bot
 end 
 
-function compose 
+function compose(::ArrowCat{Ob, Hom, C}, s₁::Square, s₂::Square)
+  Square(dom(s₁), codom(s₂), compose(C, s₁.left, s₂.left), compose(C, s₁.right, s₂.right))
 end 
 
-function id(::)
+function id(::ArrowCat{Ob, Hom, C}, f::Obs) where {Ob, Hom, C}
+  Square(f, f, id(C, f), id(C, f))
 end
 
 end
