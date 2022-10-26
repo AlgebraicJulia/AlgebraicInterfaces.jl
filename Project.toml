@@ -1,0 +1,4 @@
+name = "AlgebraicInterfaces"
+uuid = "23cfdc9f-0504-424a-be1f-4892b28e2f0c"
+authors = ["Owen Lynch <root@owenlynch.org>"]
+version = "0.1.0"
