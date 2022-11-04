@@ -20,8 +20,8 @@ function codom(::ArrowCat, s::Square)
 end 
 
 function compose(::ArrowCat{Ob, Hom, C}, s₁::Square, s₂::Square)
-  Square(dom(s₁), codom(s₂), compose(C, s₁.left, s₂.left), compose(C, s₁.right, s₂.right))
-end 
+  Square(dom(C, s₁), codom(C, s₂), compose(C, s₁.left, s₂.left), compose(C, s₁.right, s₂.right))
+end
 
 function id(::ArrowCat{Ob, Hom, C}, f::Obs) where {Ob, Hom, C}
   Square(f, f, id(C, f), id(C, f))

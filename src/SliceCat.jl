@@ -5,9 +5,9 @@ struct Slice{Ob,Hom}
   hom::Hom
 end
 
-struct SliceHom
-
-struct SliceC{Ob,Hom,C<:Category{Ob,Hom}} <: Category{Slice, Hom} end
+struct SliceC{Ob,Hom,C<:Category{Ob,Hom}} <: Category{Slice{Ob, Hom}, Tuple{Slice, Slice, Hom}}
+  over::Ob
+end
 
 function dom(::SliceC{Ob, Hom, C}, f::Hom)::Ob
   
