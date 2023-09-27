@@ -1,13 +1,28 @@
 module AlgebraicInterfaces
-using Reexport 
+export dom, codom, compose, id, Ob, ob, Hom, hom, munit, mcompose, ocompose, 
+        oapply, attr, attrtype
 
+# Theory of categories 
+function dom end
+function codom end
+function compose end
+function id end
 
-include("InterfaceCore.jl")
-include("Categories.jl")
-include("CategoryInstances.jl")
+function Ob end 
+function ob end 
+function Hom end 
+function hom end
 
-@reexport using .InterfaceCore
-@reexport using .Categories
-@reexport using .CategoryInstances
+# Monoidal categories 
+function munit end
+function mcompose end
 
-end # module AlgebraicInterfaces
+# Operads
+function ocompose end
+function oapply end
+
+# Attributed CSets
+function attr end 
+function attrtype end 
+
+end # module
