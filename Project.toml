@@ -2,3 +2,6 @@ name = "AlgebraicInterfaces"
 uuid = "23cfdc9f-0504-424a-be1f-4892b28e2f0c"
 authors = ["AlgebraicJulia developers"]
 version = "0.1.0"
+
+[compat]
+julia = "1"
