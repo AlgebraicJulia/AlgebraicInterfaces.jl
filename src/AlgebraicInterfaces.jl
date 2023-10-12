@@ -23,6 +23,9 @@ function oapply end
 
 # Attributed CSets
 function attr end 
-function attrtype end 
+function attrtype end
+
+# Generic functions
+function generators end
 
 end # module
