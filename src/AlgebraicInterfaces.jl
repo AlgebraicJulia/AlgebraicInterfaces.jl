@@ -27,5 +27,6 @@ function attrtype end
 
 # Generic functions
 function generators end
+function equations end
 
 end # module
