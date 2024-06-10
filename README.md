@@ -8,4 +8,4 @@ Contains declarations for the following functions:
 - Monoidal: categories: `munit`, `mcompose`
 - Operads: `ocompose`, `oapply`
 - Attributed CSets: `attr`, `attrtypes`
-- General algebra: `generators`
+- General algebra: `generators`, `equations`
