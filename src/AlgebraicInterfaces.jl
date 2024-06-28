@@ -1,6 +1,6 @@
 module AlgebraicInterfaces
 export dom, codom, compose, id, Ob, ob, Hom, hom, munit, mcompose, ocompose, 
-        oapply, attr, attrtype
+        oapply, attr, attrtype, generators, equations, getvalue
 
 # Theory of categories 
 function dom end
@@ -28,5 +28,6 @@ function attrtype end
 # Generic functions
 function generators end
 function equations end
+function getvalue end
 
 end # module
