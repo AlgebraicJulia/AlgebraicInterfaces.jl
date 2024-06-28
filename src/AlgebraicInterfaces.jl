@@ -28,5 +28,6 @@ function attrtype end
 # Generic functions
 function generators end
 function equations end
+function getvalue end
 
 end # module
